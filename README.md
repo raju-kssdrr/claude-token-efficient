@@ -45,6 +45,8 @@ your-project/
 - Single short queries - the file loads into context on every message, so on low-output exchanges it is a net token increase
 - Casual one-off use - the overhead doesn't pay off at low volume
 - Fixing deep failure modes like hallucinated implementations or architectural drift - those require hooks, gates, and mechanical enforcement
+- Pipelines using multiple fresh sessions per task - fresh sessions don't carry the CLAUDE.md overhead benefit the same way persistent sessions do
+- Parser reliability at scale - if you need guaranteed parseable output, use structured outputs (JSON mode, tool use with schemas) built into the API - that is a more robust solution than prompt-based formatting rules
 
 **The honest trade-off:**
 The CLAUDE.md file itself consumes input tokens on every message. The savings come from reduced output tokens. The net is only positive when output volume is high enough to offset the persistent input cost. At low usage it costs more than it saves.
