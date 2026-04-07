@@ -166,7 +166,6 @@ Pick the base file + a profile, or use the base alone.
 | `profiles/CLAUDE.coding.md` | Dev projects, code review, debugging |
 | `profiles/CLAUDE.agents.md` | Automation pipelines, multi-agent systems |
 | `profiles/CLAUDE.analysis.md` | Data analysis, research, reporting |
-| `profiles/RULES-IN-PROMPT.md` | Copy-paste rules into chat instead of file |
 
 ### Versioned Configuration Sets
 
