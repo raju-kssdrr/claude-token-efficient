@@ -166,6 +166,7 @@ Pick the base file + a profile, or use the base alone.
 | `profiles/CLAUDE.coding.md` | Dev projects, code review, debugging |
 | `profiles/CLAUDE.agents.md` | Automation pipelines, multi-agent systems |
 | `profiles/CLAUDE.analysis.md` | Data analysis, research, reporting |
+| `profiles/RULES-IN-PROMPT.md` | Copy-paste rules into chat instead of file |
 
 ### Versioned Configuration Sets
 
@@ -181,6 +182,29 @@ The `profiles/` directory also contains three versioned configuration sets repre
 - Start with **v5** if you need structured multi-step workflows with clear agent protocols
 - Use **v6** if you want faster execution with strict "done means done" rules (no polishing passing code)
 - Use **v8** only if you need maximum cost efficiency and your tasks are simple enough for 20 tool calls
+
+### Two Ways to Apply Rules
+
+**Option A: CLAUDE.md file (recommended for regular use)**
+- Drop file in project root
+- Automatic on every message
+- Cached efficiently
+- Better for repeated tasks, pipelines
+
+**Option B: Rules in prompt (for one-off sessions)**
+- Copy-paste rules into chat
+- Works without setup
+- Clear what applies this session
+- Good for quick tasks
+
+**Cost comparison** (benchmarked on 3 coding challenges):
+
+| Method | CSV | SQLite | WebSocket | Total | Cost vs v8 |
+|--------|-----|--------|-----------|-------|-----------|
+| Rules pasted in chat | $0.274 | $0.459 | $0.585 | $1.318 | +41% |
+| **CLAUDE.md (v8)** | **$0.244** | **$0.406** | **$0.285** | **$0.935** | baseline |
+
+Both pass all tests. Pick based on your workflow.
 
 ---
 
