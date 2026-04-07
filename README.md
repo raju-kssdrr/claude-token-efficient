@@ -24,15 +24,32 @@ By default, Claude:
 
 ---
 
-## The Fix
+## Two Options
 
-Drop `CLAUDE.md` into your project root.
-Claude Code reads it automatically. Behavior changes immediately.
+**Option 1: Paste rules in chat (quick start)**
+Copy these rules into any new session:
+```
+Rules: Read files first. Write complete solution. Test once. No over-engineering.
+```
+Works immediately. No setup. Good for one-off tasks.
 
+**Option 2: Drop CLAUDE.md file (set and forget)**
 ```
 your-project/
 └── CLAUDE.md    <- one file, zero setup, no code changes
 ```
+Automatic on every message. Better for regular work. More efficient at scale.
+
+Pick based on your workflow. Both work.
+
+---
+
+## How They Compare
+
+| Approach | Setup | Cost | Best For |
+|----------|-------|------|----------|
+| Rules in chat | None | Higher | Quick sessions, no project |
+| CLAUDE.md file | 1 file | Lower | Regular work, pipelines |
 
 ---
 
